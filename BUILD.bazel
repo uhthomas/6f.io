@@ -22,22 +22,20 @@ container_image(
     tars = [":tar"],
 )
 
-load("@io_bazel_rules_docker//docker:docker.bzl", "docker_bundle")
-
-load("//:images.bzl", "images")
-
-docker_bundle(
-    name = "bundle",
-    images = images(
-        "{BUILD_TIMESTAMP}",
-        "{GIT_COMMIT}",
-        "{GIT_TAG}",
-    ),
-)
-
-load("@io_bazel_rules_docker//contrib:push-all.bzl", "docker_push")
+load("@io_bazel_rules_docker//docker:docker.bzl", "docker_push")
 
 docker_push(
-    name = "push",
-    bundle = "bundle",
+   name = "push",
+   image = ":image",
+   registry = "docker.pkg.github.com",
+   repository = "uhthomas/6f.io/root",
+   tag = "{STABLE_GIT_COMMIT}",
+)
+
+docker_push(
+   name = "push_tag",
+   image = ":image",
+   registry = "docker.pkg.github.com",
+   repository = "uhthomas/6f.io/root",
+   tag = "{STABLE_GIT_TAG}",
 )

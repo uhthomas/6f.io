@@ -1,5 +1,8 @@
 name: Push
-on: [push]
+on:
+  push:
+    branches: master
+    tags: '*v'
 jobs:
   push:
     name: Push
@@ -17,4 +20,4 @@ jobs:
           login-server: docker.pkg.github.com
           username: $GITHUB_ACTOR
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: bazel run //:push
+      - run: bazel run //:push_tag
