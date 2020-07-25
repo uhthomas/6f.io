@@ -1,0 +1,43 @@
+filegroup(
+    name = "src",
+    srcs = glob(["src/**"]),
+)
+
+load("@rules_pkg//:pkg.bzl", "pkg_tar")
+
+pkg_tar(
+    name = "tar",
+    strip_prefix = "/src",
+    package_dir = "/usr/share/nginx/html",
+    srcs = ["//:src"],
+    mode = "0444",
+)
+
+
+load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+
+container_image(
+    name = "image",
+    base = "@nginx//image",
+    tars = [":tar"],
+)
+
+load("@io_bazel_rules_docker//docker:docker.bzl", "docker_bundle")
+
+load("//:images.bzl", "images")
+
+docker_bundle(
+    name = "bundle",
+    images = images(
+        "{BUILD_TIMESTAMP}",
+        "{GIT_COMMIT}",
+        "{GIT_TAG}",
+    ),
+)
+
+load("@io_bazel_rules_docker//contrib:push-all.bzl", "docker_push")
+
+docker_push(
+    name = "push",
+    bundle = "bundle",
+)
