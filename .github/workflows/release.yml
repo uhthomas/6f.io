@@ -21,4 +21,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: bazel run //:push_tag
         env:
+          GIT_COMMIT: ${{ github.sha }}
           GIT_REF: ${{ github.event.release.tag_name }}
