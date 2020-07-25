@@ -1,9 +1,9 @@
-name: Push
+name: Push tag
 on:
   push:
     tags: v[0-9].[0-9]+.[0-9]+
 jobs:
-  push:
+  push-tag:
     name: Push tag
     runs-on: ubuntu-latest
     steps:
@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: bazel run //:push_tag
         env:
-          GIT_REF: ${GITHUB_REF#refs/heads/}
+          GIT_REF: ${{ github.ref }}
