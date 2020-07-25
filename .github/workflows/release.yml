@@ -1,10 +1,10 @@
-name: Push tag
+name: Release
 on:
-  push:
-    tags: v[0-9].[0-9]+.[0-9]+
+  release:
+    types: [published]
 jobs:
-  push-tag:
-    name: Push tag
+  push:
+    name: Push release tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: bazel run //:push_tag
         env:
-          GIT_REF: ${{ github.ref }}
+          GIT_REF: ${{ github.event.release.tag_name }}
