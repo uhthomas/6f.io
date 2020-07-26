@@ -49,3 +49,31 @@ container_pull(
     # v1.19.1
     digest = "sha256:deb724a427ea79face617392a5a471fdcb4cdb57f971ee6b7e492b90fecb199f",
 )
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
+
+new_git_repository(
+    name = "screensaver",
+    commit = "2830e0652bf53a419ec4f7c5a93c1cc5c8f05243",
+    remote = "git@github.com:uhthomas/screensaver",
+    build_file_content = """
+filegroup(
+    name = "src",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+    """,
+)
+
+new_git_repository(
+    name = "spectrum",
+    commit = "082317f5a249f324e9840f3d462134f55af35122",
+    remote = "git@github.com:uhthomas/spectrum",
+    build_file_content = """
+filegroup(
+    name = "src",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+    """,
+)
