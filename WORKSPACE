@@ -43,9 +43,9 @@ load(
 )
 
 container_pull(
-  name = "nginx",
-  registry = "index.docker.io",
-  repository = "library/nginx",
-  # v1.19.1
-  digest = "sha256:deb724a427ea79face617392a5a471fdcb4cdb57f971ee6b7e492b90fecb199f",
+    name = "nginx",
+    registry = "index.docker.io",
+    repository = "library/nginx",
+    # v1.19.1
+    digest = "sha256:deb724a427ea79face617392a5a471fdcb4cdb57f971ee6b7e492b90fecb199f",
 )

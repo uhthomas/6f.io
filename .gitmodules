@@ -1,6 +1,0 @@
-[submodule "src/spectrum"]
-	path = src/spectrum
-	url = https://github.com/uhthomas/spectrum
-[submodule "src/screensaver"]
-	path = src/screensaver
-	url = https://github.com/uhthomas/screensaver
