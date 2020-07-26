@@ -1,0 +1,6 @@
+[submodule "src/spectrum"]
+	path = src/spectrum
+	url = git@github.com:uhthomas/spectrum
+[submodule "src/screensaver"]
+	path = src/screensaver
+	url = git@github.com:uhthomas/screensaver
