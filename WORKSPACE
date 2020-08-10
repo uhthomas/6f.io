@@ -67,7 +67,7 @@ filegroup(
 
 new_git_repository(
     name = "spectrum",
-    commit = "082317f5a249f324e9840f3d462134f55af35122",
+    commit = "8456dd7cf15907f47187b40b9753a9867de574b3",
     remote = "https://github.com/uhthomas/spectrum",
     build_file_content = """
 filegroup(
