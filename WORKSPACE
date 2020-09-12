@@ -52,28 +52,16 @@ container_pull(
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 
-new_git_repository(
+http_archive(
     name = "screensaver",
-    commit = "2830e0652bf53a419ec4f7c5a93c1cc5c8f05243",
-    remote = "https://github.com/uhthomas/screensaver",
-    build_file_content = """
-filegroup(
-    name = "src",
-    srcs = glob(["**"]),
-    visibility = ["//visibility:public"],
-)
-    """,
+    sha256 = "eaf5dfa4cdcd62404c5fc7e12a29be0171c779cada632643e81c91e336b39bff",
+    urls = ["https://github.com/uhthomas/screensaver/archive/2830e0652bf53a419ec4f7c5a93c1cc5c8f05243.tar.gz"],
+    build_file = "//:src.bazel",
 )
 
-new_git_repository(
+http_archive(
     name = "spectrum",
-    commit = "8456dd7cf15907f47187b40b9753a9867de574b3",
-    remote = "https://github.com/uhthomas/spectrum",
-    build_file_content = """
-filegroup(
-    name = "src",
-    srcs = glob(["**"]),
-    visibility = ["//visibility:public"],
-)
-    """,
+    sha256 = "157b396e3418e764fb0146408f5052a9b93902f2e743dd15ac9975c6e5b86090",
+    urls = ["https://github.com/uhthomas/spectrum/archive/8456dd7cf15907f47187b40b9753a9867de574b3.tar.gz"],
+    build_file = "//:src.bazel",
 )

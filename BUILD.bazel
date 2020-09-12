@@ -4,7 +4,7 @@ pkg_tar(
     name = "tar",
     strip_prefix = "/src",
     package_dir = "/usr/share/nginx/html",
-    srcs = glob(["src/**"]) + ["@screensaver//:src"] + ["@spectrum//:src"],
+    srcs = glob(["src/**"]) + ["@screensaver//:src", "@spectrum//:src"],
     mode = "0444",
     remap_paths = { "external": "" },
 )
