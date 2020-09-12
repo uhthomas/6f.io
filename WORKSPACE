@@ -50,18 +50,18 @@ container_pull(
     digest = "sha256:deb724a427ea79face617392a5a471fdcb4cdb57f971ee6b7e492b90fecb199f",
 )
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
-
 http_archive(
     name = "screensaver",
+    strip_prefix = "screensaver-2830e0652bf53a419ec4f7c5a93c1cc5c8f05243",
+    build_file = "//:src.bazel",
     sha256 = "eaf5dfa4cdcd62404c5fc7e12a29be0171c779cada632643e81c91e336b39bff",
     urls = ["https://github.com/uhthomas/screensaver/archive/2830e0652bf53a419ec4f7c5a93c1cc5c8f05243.tar.gz"],
-    build_file = "//:src.bazel",
 )
 
 http_archive(
     name = "spectrum",
+    strip_prefix = "spectrum-8456dd7cf15907f47187b40b9753a9867de574b3",
+    build_file = "//:src.bazel",
     sha256 = "157b396e3418e764fb0146408f5052a9b93902f2e743dd15ac9975c6e5b86090",
     urls = ["https://github.com/uhthomas/spectrum/archive/8456dd7cf15907f47187b40b9753a9867de574b3.tar.gz"],
-    build_file = "//:src.bazel",
 )

@@ -1,10 +1,27 @@
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 pkg_tar(
-    name = "tar",
-    strip_prefix = "/src",
+    name = "src",
+    strip_prefix = "src",
     package_dir = "/usr/share/nginx/html",
-    srcs = glob(["src/**"]) + ["@screensaver//:src", "@spectrum//:src"],
+    srcs = glob(["src/**"]),
+    mode = "0444",
+)
+
+pkg_tar(
+    name = "screensaver",
+    strip_prefix = ".",
+    package_dir = "/usr/share/nginx/html",
+    srcs = ["@screensaver//:src"],
+    mode = "0444",
+    remap_paths = { "external": "" },
+)
+
+pkg_tar(
+    name = "spectrum",
+    strip_prefix = ".",
+    package_dir = "/usr/share/nginx/html",
+    srcs = ["@spectrum//:src"],
     mode = "0444",
     remap_paths = { "external": "" },
 )
@@ -14,23 +31,23 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 container_image(
     name = "image",
     base = "@nginx//image",
-    tars = [":tar"],
+    tars = [":src", ":screensaver", ":spectrum"],
 )
 
 load("@io_bazel_rules_docker//docker:docker.bzl", "docker_push")
 
 docker_push(
-   name = "push",
-   image = ":image",
-   registry = "docker.pkg.github.com",
-   repository = "uhthomas/6f.io/root",
-   tag = "{STABLE_GIT_COMMIT}",
+    name = "push",
+    image = ":image",
+    registry = "docker.pkg.github.com",
+    repository = "uhthomas/6f.io/root",
+    tag = "{STABLE_GIT_COMMIT}",
 )
 
 docker_push(
-   name = "push_tag",
-   image = ":image",
-   registry = "docker.pkg.github.com",
-   repository = "uhthomas/6f.io/root",
-   tag = "{STABLE_GIT_REF}",
+    name = "push_tag",
+    image = ":image",
+    registry = "docker.pkg.github.com",
+    repository = "uhthomas/6f.io/root",
+    tag = "{STABLE_GIT_REF}",
 )

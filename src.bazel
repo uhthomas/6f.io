@@ -1,5 +1,5 @@
 filegroup(
     name = "src",
-    srcs = glob(["**"]),
+    srcs = glob(["**/*.html", "**/*.js"]),
     visibility = ["//visibility:public"],
 )
