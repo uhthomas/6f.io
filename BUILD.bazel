@@ -39,15 +39,15 @@ load("@io_bazel_rules_docker//docker:docker.bzl", "docker_push")
 docker_push(
     name = "push",
     image = ":image",
-    registry = "docker.pkg.github.com",
-    repository = "uhthomas/6f.io/root",
+    registry = "ghcr.io",
+    repository = "uhthomas/6f.io",
     tag = "{STABLE_GIT_COMMIT}",
 )
 
 docker_push(
     name = "push_tag",
     image = ":image",
-    registry = "docker.pkg.github.com",
-    repository = "uhthomas/6f.io/root",
+    registry = "ghcr.io",
+    repository = "uhthomas/6f.io",
     tag = "{STABLE_GIT_REF}",
 )
