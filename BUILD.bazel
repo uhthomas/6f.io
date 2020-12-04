@@ -1,29 +1,19 @@
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
+
+buildifier(name = "buildifier")
+
 load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 pkg_tar(
     name = "src",
+    srcs = glob(["src/**"]) + [
+        "@screensaver//:src",
+        "@spectrum//:src",
+    ],
+    mode = "0444",
+    package_dir = "/usr/share/nginx/html",
+    remap_paths = {"external": ""},
     strip_prefix = "src",
-    package_dir = "/usr/share/nginx/html",
-    srcs = glob(["src/**"]),
-    mode = "0444",
-)
-
-pkg_tar(
-    name = "screensaver",
-    strip_prefix = ".",
-    package_dir = "/usr/share/nginx/html",
-    srcs = ["@screensaver//:src"],
-    mode = "0444",
-    remap_paths = { "external": "" },
-)
-
-pkg_tar(
-    name = "spectrum",
-    strip_prefix = ".",
-    package_dir = "/usr/share/nginx/html",
-    srcs = ["@spectrum//:src"],
-    mode = "0444",
-    remap_paths = { "external": "" },
 )
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
@@ -31,7 +21,7 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 container_image(
     name = "image",
     base = "@nginx//image",
-    tars = [":src", ":screensaver", ":spectrum"],
+    tars = [":src"],
 )
 
 load("@io_bazel_rules_docker//docker:docker.bzl", "docker_push")
