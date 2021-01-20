@@ -60,7 +60,7 @@ http_archive(
 http_archive(
     name = "spectrum",
     build_file = "//:src.bazel",
-    sha256 = "f24f29b782a546823ada024581e562b556be95f3cf81614f6e87245432da1417 ",
+    sha256 = "f24f29b782a546823ada024581e562b556be95f3cf81614f6e87245432da1417",
     strip_prefix = "spectrum-acb81a3eaf227d1ca6d584b182a3315c522b8799",
     urls = ["https://github.com/uhthomas/spectrum/archive/acb81a3eaf227d1ca6d584b182a3315c522b8799.tar.gz"],
 )
