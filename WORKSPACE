@@ -52,17 +52,17 @@ http_archive(
 http_archive(
     name = "screensaver",
     build_file = "//:src.bazel",
-    sha256 = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
-    strip_prefix = "screensaver-acb81a3eaf227d1ca6d584b182a3315c522b8799",
-    urls = ["https://github.com/uhthomas/screensaver/archive/acb81a3eaf227d1ca6d584b182a3315c522b8799.tar.gz"],
+    sha256 = "eaf5dfa4cdcd62404c5fc7e12a29be0171c779cada632643e81c91e336b39bff",
+    strip_prefix = "screensaver-2830e0652bf53a419ec4f7c5a93c1cc5c8f05243",
+    urls = ["https://github.com/uhthomas/screensaver/archive/2830e0652bf53a419ec4f7c5a93c1cc5c8f05243.tar.gz"],
 )
 
 http_archive(
     name = "spectrum",
     build_file = "//:src.bazel",
-    sha256 = "157b396e3418e764fb0146408f5052a9b93902f2e743dd15ac9975c6e5b86090",
-    strip_prefix = "spectrum-8456dd7cf15907f47187b40b9753a9867de574b3",
-    urls = ["https://github.com/uhthomas/spectrum/archive/8456dd7cf15907f47187b40b9753a9867de574b3.tar.gz"],
+    sha256 = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+    strip_prefix = "spectrum-acb81a3eaf227d1ca6d584b182a3315c522b8799",
+    urls = ["https://github.com/uhthomas/spectrum/archive/acb81a3eaf227d1ca6d584b182a3315c522b8799.tar.gz"],
 )
 
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
