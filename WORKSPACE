@@ -52,9 +52,9 @@ http_archive(
 http_archive(
     name = "screensaver",
     build_file = "//:src.bazel",
-    sha256 = "eaf5dfa4cdcd62404c5fc7e12a29be0171c779cada632643e81c91e336b39bff",
-    strip_prefix = "screensaver-2830e0652bf53a419ec4f7c5a93c1cc5c8f05243",
-    urls = ["https://github.com/uhthomas/screensaver/archive/2830e0652bf53a419ec4f7c5a93c1cc5c8f05243.tar.gz"],
+    sha256 = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+    strip_prefix = "screensaver-acb81a3eaf227d1ca6d584b182a3315c522b8799",
+    urls = ["https://github.com/uhthomas/screensaver/archive/acb81a3eaf227d1ca6d584b182a3315c522b8799.tar.gz"],
 )
 
 http_archive(
