@@ -60,9 +60,9 @@ http_archive(
 http_archive(
     name = "spectrum",
     build_file = "//:src.bazel",
-    sha256 = "cb5da83fd5af0deef42075601ec8c8362a6adc181289555868cd3bbece0b4c1d",
-    strip_prefix = "spectrum-cd22c4b4bbb1ef592de2db3b7b9399a80b611a4a",
-    urls = ["https://github.com/uhthomas/spectrum/archive/cd22c4b4bbb1ef592de2db3b7b9399a80b611a4a.tar.gz"],
+    sha256 = "4dff321638d1ab43e3f8f7809064fd5d6557363ee5261accf7244e10ba04f77a",
+    strip_prefix = "spectrum-5cfc6b6b5acfc70737457bcff92ad95f21ccc21d",
+    urls = ["https://github.com/uhthomas/spectrum/archive/5cfc6b6b5acfc70737457bcff92ad95f21ccc21d.tar.gz"],
 )
 
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
