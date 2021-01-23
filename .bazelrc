@@ -1,2 +1,4 @@
 build --stamp
 build --workspace_status_command hack/workspace-status.sh
+
+build --incompatible_restrict_string_escapes false
