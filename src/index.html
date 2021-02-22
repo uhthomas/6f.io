@@ -54,14 +54,10 @@
 
   main {
     display: grid;
-    width: 100%;
-    max-height: 100%;
     grid-template-columns: 1fr;
   }
 
   section {
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
     padding: 24px;
   }
@@ -70,17 +66,13 @@
     background: var(--background-secondary);
   }
 
-  section.content > header {
-    color: var(--label-secondary);
-    margin: 12px 0;
-    font-size: 24px;
-    font-weight: 400;
+  section.content > article:not(:last-child) {
+    margin-bottom: 24px;
   }
 
-  article {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 12px;
+  section.content > header {
+    color: var(--label-secondary);
+    margin: 24px 0 12px 0;
   }
 
   h1 {
@@ -90,6 +82,11 @@
 
   h2 {
     font-size: 30px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 24px;
     font-weight: 400;
   }
 
@@ -110,7 +107,7 @@
   hr {
     height: 1px;
     background: var(--seperator);
-    margin-bottom: 12px;
+    margin: 12px 0;
   }
 
   @media only screen and (min-width: 800px) {
@@ -144,9 +141,14 @@
   <main>
     <section class="meta">
       <article>
-        <h1>Thomas</h1>
-        <a href="mailto:&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;">&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;</a>
-        <a href="https://github.com/uhthomas">github.com/uhthomas</a>
+        <header>
+          <h1>Thomas</h1>
+          <p>
+            <a href="mailto:&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;">&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;</a>
+            <br/>
+            <a href="https://github.com/uhthomas">github.com/uhthomas</a>
+          </p>
+        </header>
         <br/>
         <p>Systems Engineer at <a class="cf" href="https://cloudflare.com/">Cloudflare</a></p>
       </article>
@@ -200,7 +202,7 @@
         <p>A collection of screensavers inspired by Plug.DJ.</p>
       </article>
       <header>
-        <i>Archive</i>
+        <h3><i>Archive</i></h3>
       </header>
       <hr/>
       <article>
