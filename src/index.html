@@ -2,228 +2,208 @@
 <html>
 
 <head>
-	<title>6f.io</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	<meta name="theme-color" content="#121212">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons:Roboto:400,500">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product+Sans:400,500">
-	<style>
-	* {
-		margin: 0;
-		border: 0;
-	}
+  <title>Thomas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product+Sans:300,400,500">
+  <style>
+  :root {
+    color-scheme: light dark;
+  }
 
-	html,
-	body {
-		width: 100%;
-		height: 100%;
-	}
+  @media (prefers-color-scheme: light) {
+    :root {
+      --background-color: white;
+      --label: #000000ff;
+      --label-secondary: #3c3c4399;
+      --seperator: #3c3c4349;
+      --link: #007affff;
+    }
+  }
 
-	body {
-		background: black;
-		color: #dedede;
-		font-family: 'Product Sans', 'Roboto', arial, sans-serif;
-		font-size: 16px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-sizing: border-box;
-	}
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: black;
+      --label: #ffffffff;
+      --label-secondary: #ebebf599;
+      --seperator: #54545899;
+      --link: #0984ffff;
+    }
+  }
 
-	main {
-		width: 100%;
-		max-width: 800px;
-		max-height: 100%;
-	}
+  * {
+    margin: 0;
+    border: 0;
+  }
 
-	section {
-		margin-bottom: 16px;
-	}
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
 
-	h1 {
-		font-size: 20px;
-		font-weight: 500;
-		line-height: 48px;
-		height: 48px;
-		box-sizing: border-box;
-		padding: 0 16px;
-		text-align: center;
-	}
+  body {
+    background: var(--background-color);
+    color: var(--label);
+    font-family: 'Product Sans', arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+  }
 
-	.card {
-		border-radius: 8px;
-		overflow: hidden;
-	}
+  main {
+    display: grid;
+    width: 100%;
+    max-height: 100%;
+    grid-template-columns: repeat(3, 1fr)
+  }
 
-	article {
-		display: flex;
-		min-height: 72px;
-		padding-left: 24px;
-	}
+  @media only screen and (max-width: 1280px) {
+    main {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
 
-	article .icon {
-		padding: 24px;
-		width: 24px;
-		height: 24px;
-		background-position: center;
-		background-repeat: no-repeat;
-		flex-shrink: 0;
-	}
+  section {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 24px;
+  }
 
-	article .icon.pd {
-		padding: 0;
-		margin: 8px;
-		line-height: 56px;
-		height: 56px;
-		width: 56px;
-		font-size: 24px;
-		display: flex;
-		justify-content: center;
-	}
+  section.meta {
+    align-items: right;
+    text-align: right;
+    padding-right: 12px;
+  }
 
-	article .icon.pd:before {
-		content: 'Pd';
-	}
+  section.content {
+    align-items: left;
+    text-align: left;
+    padding-left: 12px;
+  }
 
-	article .icon.pd:after {
-		content: '.';
-		color: #5c5ee6;
-	}
+  section.content > header {
+    color: var(--label-secondary);
+    margin: 12px 0;
+    font-size: 24px;
+    font-weight: 400;
+  }
 
-	article .text {
-		flex: 1;
-	}
+  article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
 
-	article h2 {
-		height: 34px;
-		display: flex;
-		align-items: flex-end;
-		margin-bottom: 4px;
-		font-size: inherit;
-		font-weight: normal;
-	}
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+  }
 
-	article p {
-		font-size: 14px;
-		font-weight: normal;
-		color: #999999;
-		margin-bottom: 20px;
-	}
+  h2 {
+    font-size: 30px;
+    font-weight: 400;
+  }
 
-	a {
-		color: #00B0FF;
-		text-decoration: none;
-	}
+  p {
+    color: var(--label-secondary);
+  }
 
-	hr {
-		width: 48px;
-		height: 6px;
-		border-radius: 3px;
-		background: rgba(255,255,255,0.7);
-		margin: 16px auto;
-	}
-	</style>
-	<script>
-	(function(i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r;
-		i[r] = i[r] || function() {
-			(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date();
-		a = s.createElement(o),
-			m = s.getElementsByTagName(o)[0];
-		a.async = 1;
-		a.src = g;
-		m.parentNode.insertBefore(a, m)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  a {
+    color: #00B0FF;
+    text-decoration: none;
+    font-weight: 400;
+  }
 
-	ga('create', 'UA-72185173-1', 'auto');
-	ga('send', 'pageview');
-	</script>
+  a.cf {
+    color: #F48120;
+  }
+
+  hr {
+    height: 1px;
+    background: var(--seperator);
+    margin-bottom: 12px;
+  }
+  </style>
 </head>
 
 <body>
-	<main>
-		<section>
-			<h1>Thomas</h1>
-			<div class="card">
-				<article>
-					<div class="text">
-						<h2>Email</h2>
-						<p><a href="mailto:&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;">&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;</a></p>
-					</div>
-					<i class="material-icons icon">alternate_email</i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>GitHub</h2>
-						<p><a href="https://github.com/uhthomas">github.com/uhthomas</a></p>
-					</div>
-					<i class="icon" style="background-image: url(github.png);"></i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Discord</h2>
-						<p>thomas#9820</p>
-					</div>
-					<i class="icon" style="background-image: url(discord.png);"></i>
-				</article>
-			</div>
-		</section>
-		<section>
-			<h1>6f.io</h1>
-			<div class="card">
-				<article>
-					<div class="text">
-						<h2>Kipp</h2>
-						<p><a href="https://kipp.6f.io">kipp.6f.io</a> - The easy to use, open source, secure temporary file storage server.</p>
-					</div>
-					<i class="material-icons icon" style="color: #00e676">storage</i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Palladium</h2>
-						<p><a href="https://palladium.dev">palladium.dev</a> - An IPFS pinning service designed to make sharing data of any size secure and easy.</p>
-					</div>
-					<span class="icon pd"/>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Pastry Search</h2>
-						<p><a href="https://github.com/uhthomas/pastrysearch">github.com/uhthomas/pastrysearch</a> - A peer-to-peer search engine built on top of the Pastry DHT.</p>
-					</div>
-					<i class="material-icons icon">code</i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Pastry</h2>
-						<p><a href="https://github.com/uhthomas/pastry">github.com/uhthomas/pastry</a> - Go implementation of the Pastry distributed hash table.</p>
-					</div>
-					<i class="material-icons icon">code</i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Spectrum</h2>
-						<p><a href="https://6f.io/spectrum">6f.io/spectrum</a> - An in-browser audio spectrum.</p>
-					</div>
-					<i class="material-icons icon">code</i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Screensaver</h2>
-						<p><a href="https://6f.io/screensaver">6f.io/screensaver</a> - A small collection of fun graphics experiments.</p>
-					</div>
-					<i class="material-icons icon">code</i>
-				</article>
-				<article>
-					<div class="text">
-						<h2>Quickhull</h2>
-						<p><a href="https://github.com/uhthomas/quickhull">github.com/uhthomas/quickhull</a> - Integer-bound convex hull.</p>
-					</div>
-					<i class="material-icons icon">code</i>
-				</article>
-			</div>
-		</section>
-	</main>
+  <main>
+    <section class="meta">
+      <h1>Thomas</h1>
+      <a href="mailto:&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;">&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;</a>
+      <a href="https://github.com/uhthomas">github.com/uhthomas</a>
+      <br/>
+      <p>Systems Engineer at <a class="cf" href="https://cloudflare.com/">Cloudflare</a></p>
+    </section>
+    <section class="content">
+      <article>
+        <header>
+          <h2>Kipp</h2>
+          <p>
+            <a href="https://kipp.6f.io">kipp.6f.io</a>
+            &nbsp;&mdash;&nbsp;
+            <a href="https://github.com/uhthomas/kipp">GitHub</a>
+          </p>
+        </header>
+        <p>A flexible file storage server.</p>
+      </article>
+      <article>
+        <header>
+          <h2>Automata</h2>
+          <a href="https://github.com/uhthomas/automata">GitHub</a>
+        </header>
+        <p>Monorepo for 6f.io and subsidiaries.</p>
+      </article>
+      <article>
+        <header>
+          <h2>Tesla Prometheus Exporter</h2>
+          <a href="https://github.com/uhthomas/tesla_exporter">GitHub</a>
+        </header>
+        <p>Export Tesla vehicle metrics to Prometheus.</p>
+      </article>
+      <article>
+        <header>
+          <h2>Spectrum</h2>
+          <p>
+            <a href="https://6f.io/spectrum">6f.io/spectrum</a>
+            &nbsp;&mdash;&nbsp;
+            <a href="https://github.com/uhthomas/spectrum">GitHub</a>
+          </p>
+        </header>
+        <p>A real-time FFT spectrum.</p>
+      </article>
+      <article>
+        <header>
+          <h2>Screensaver</h2>
+          <p>
+            <a href="https://6f.io/screensaver">6f.io/screensaver</a>
+            &nbsp;&mdash;&nbsp;
+            <a href="https://github.com/uhthomas/screensaver">GitHub</a>
+          </p>
+        </header>
+        <p>A collection of screensavers inspired by Plug.DJ.</p>
+      </article>
+      <header>
+        <i>Archive</i>
+      </header>
+      <hr/>
+      <article>
+        <header>
+          <h2>Sana</h2>
+          <a href="https://github.com/uhthomas/sana">GitHub</a>
+        </header>
+        <p>Sana was a YouTube and SoundCloud archival service which archived targeted content between late 2015, and late 2016.</p>
+      </article>
+      <article>
+        <header>
+          <h2>Phynix</h2>
+          <a href="https://github.com/uhthomas/phynix">GitHub</a>
+        </header>
+        <p>Phynix was a Plug DJ alternative, and the successor to TurnFM after a dispute between the founders. It made it to the final stages of development, but due to lack of interest and time, it was never launched.</p>
+      </article>
+    </section>
+  </main>
 </body>
 
 </html>
