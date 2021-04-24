@@ -36,8 +36,8 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 
 container_pull(
     name = "nginx",
-    # v1.19.6-alpine (linux/amd64)
-    digest = "sha256:01747306a7247dbe928db991eab42e4002118bf636dd85b4ffea05dd907e5b66",
+    # v1.20.0-alpine (linux/amd64)
+    digest = "sha256:55684c622b7b62045bd4578e402704bdd1923f6ab704f57134e712c2f1da48c8",
     registry = "index.docker.io",
     repository = "library/nginx",
 )
