@@ -1,3 +1,4 @@
+# gazelle:repository_macro go_deps.bzl%go_dependencies
 workspace(name = "com_github_uhthomas_6f_io")
 
 load("//:deps.bzl", "dependencies")
@@ -12,7 +13,7 @@ load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_depe
 
 go_rules_dependencies()
 
-go_register_toolchains(go_version = "1.16")
+go_register_toolchains(go_version = "1.16.3")
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 

@@ -1,8 +1,13 @@
 load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@io_bazel_rules_docker//docker:docker.bzl", "docker_push")
+load("@rules_pkg//:pkg.bzl", "pkg_tar")
 
 buildifier(name = "buildifier")
 
-load("@rules_pkg//:pkg.bzl", "pkg_tar")
+# gazelle:prefix github.com/uhthomas/6f.io
+gazelle(name = "gazelle")
 
 pkg_tar(
     name = "src",
@@ -16,15 +21,11 @@ pkg_tar(
     strip_prefix = "src",
 )
 
-load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-
 container_image(
     name = "image",
     base = "@nginx//image",
     tars = [":src"],
 )
-
-load("@io_bazel_rules_docker//docker:docker.bzl", "docker_push")
 
 docker_push(
     name = "push",
