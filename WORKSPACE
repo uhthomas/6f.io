@@ -15,6 +15,10 @@ go_rules_dependencies()
 
 go_register_toolchains(go_version = "1.16.3")
 
+load("//:go_deps.bzl", "go_dependencies")
+
+go_dependencies()
+
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
