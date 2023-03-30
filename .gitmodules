@@ -1,0 +1,6 @@
+[submodule "dist/screensaver"]
+	path = dist/screensaver
+	url = https://github.com/uhthomas/screensaver
+[submodule "dist/spectrum"]
+	path = dist/spectrum
+	url = https://github.com/uhthomas/spectrum
