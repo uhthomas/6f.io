@@ -1,229 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-  <title>Thomas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-  <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product+Sans:300,400,500">
-  <style>
-    :root {
-      color-scheme: light dark;
-    }
-
-    @media (prefers-color-scheme: light) {
+  <head>
+    <title>Thomas</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Product+Sans:300,400,500"
+    />
+    <style>
       :root {
-        --background: white;
-        --background-secondary: #f2f2f7ff;
-        --label: #000000ff;
-        --label-secondary: #3c3c4399;
-        --separator: #3c3c4349;
-        --link: #007affff;
+        color-scheme: light dark;
       }
-    }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: black;
-        --background-secondary: #1c1c1eff;
-        --label: #ffffffff;
-        --label-secondary: #ebebf599;
-        --separator: #54545899;
-        --link: #0984ffff;
+      @media (prefers-color-scheme: light) {
+        :root {
+          --background: white;
+          --background-secondary: #f2f2f7ff;
+          --label: #000000ff;
+          --label-secondary: #3c3c4399;
+          --separator: #3c3c4349;
+          --link: #007affff;
+        }
       }
-    }
 
-    * {
-      margin: 0;
-      border: 0;
-    }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: black;
+          --background-secondary: #1c1c1eff;
+          --label: #ffffffff;
+          --label-secondary: #ebebf599;
+          --separator: #54545899;
+          --link: #0984ffff;
+        }
+      }
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
+      * {
+        margin: 0;
+        border: 0;
+      }
 
-    body {
-      background: var(--background);
-      color: var(--label);
-      font-family: 'Product Sans', arial, sans-serif;
-      font-size: 20px;
-      font-weight: 300;
-    }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
 
-    main {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
+      body {
+        background: var(--background);
+        color: var(--label);
+        font-family: "Product Sans", arial, sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+      }
 
-    section {
-      box-sizing: border-box;
-      padding: 24px;
-    }
-
-    section.meta {
-      background: var(--background-secondary);
-    }
-
-    section.content>article:not(:last-child) {
-      margin-bottom: 24px;
-    }
-
-    section.content>header {
-      color: var(--label-secondary);
-      margin: 24px 0;
-    }
-
-    h1 {
-      font-size: 48px;
-      font-weight: 500;
-    }
-
-    h2 {
-      font-size: 30px;
-      font-weight: 400;
-    }
-
-    h3 {
-      font-size: 24px;
-      font-weight: 400;
-    }
-
-    p {
-      color: var(--label-secondary);
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-      font-weight: 400;
-    }
-
-    a.cf {
-      color: #f48120;
-    }
-
-    hr {
-      height: 4px;
-      background: var(--separator);
-      margin: 12px 0;
-    }
-
-    @media only screen and (min-width: 800px) {
       main {
-        grid-template-columns: minmax(max-content, 1fr) 3fr;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        box-sizing: border-box;
+        padding: 24px;
       }
 
       section.meta {
-        padding-right: 12px;
-        text-align: right;
-        background: none;
-        position: sticky;
-        top: 0;
-        height: fit-content;
+        background: var(--background-secondary);
       }
 
-      section.content {
-        padding-left: 12px;
+      section.content > article:not(:last-child) {
+        margin-bottom: 24px;
       }
-    }
 
-    @media only screen and (min-width: 1920px) {
-      main {
-        grid-template-columns: minmax(max-content, 1fr) 2fr 1fr;
+      section.content > header {
+        color: var(--label-secondary);
+        margin: 24px 0;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <main>
-    <section class="meta">
-      <article>
-        <header>
-          <h1>Thomas</h1>
-          <p>
-            <a
-              href="mailto:&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;">&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;</a>
-            <br />
-            <a href="https://github.com/uhthomas">github.com/uhthomas</a>
-          </p>
-        </header>
-        <br />
-        <p>Systems Engineer at <a class="cf" href="https://cloudflare.com/">Cloudflare</a></p>
-      </article>
-    </section>
-    <section class="content">
-      <article>
-        <header>
-          <h2>Kipp</h2>
-          <p>
-            <a href="https://kipp.6f.io">kipp.6f.io</a>
-            &nbsp;&mdash;&nbsp;
-            <a href="https://github.com/uhthomas/kipp">GitHub</a>
-          </p>
-        </header>
-        <p>A flexible file storage server.</p>
-      </article>
-      <article>
-        <header>
-          <h2>Automata</h2>
-          <a href="https://github.com/uhthomas/automata">GitHub</a>
-        </header>
-        <p>Monorepo for 6f.io and subsidiaries.</p>
-      </article>
-      <article>
-        <header>
-          <h2>Tesla Prometheus Exporter</h2>
-          <a href="https://github.com/uhthomas/tesla_exporter">GitHub</a>
-        </header>
-        <p>Export Tesla vehicle metrics to Prometheus.</p>
-      </article>
-      <article>
-        <header>
-          <h2>Spectrum</h2>
-          <p>
-            <a href="https://6f.io/spectrum">6f.io/spectrum</a>
-            &nbsp;&mdash;&nbsp;
-            <a href="https://github.com/uhthomas/spectrum">GitHub</a>
-          </p>
-        </header>
-        <p>A real-time FFT spectrum.</p>
-      </article>
-      <article>
-        <header>
-          <h2>Screensaver</h2>
-          <p>
-            <a href="https://6f.io/screensaver">6f.io/screensaver</a>
-            &nbsp;&mdash;&nbsp;
-            <a href="https://github.com/uhthomas/screensaver">GitHub</a>
-          </p>
-        </header>
-        <p>A collection of screensavers inspired by Plug.DJ.</p>
-      </article>
-      <hr />
-      <header>
-        <h3><i>Archive</i></h3>
-      </header>
-      <article>
-        <header>
-          <h2>Sana</h2>
-          <a href="https://github.com/uhthomas/sana">GitHub</a>
-        </header>
-        <p>Sana was a YouTube and SoundCloud archival service which archived targeted content between late 2015, and
-          late 2016.</p>
-      </article>
-      <article>
-        <header>
-          <h2>Phynix</h2>
-          <a href="https://github.com/uhthomas/phynix">GitHub</a>
-        </header>
-        <p>Phynix was a Plug DJ alternative, and the successor to TurnFM after a dispute between the founders. It made
-          it to the final stages of development, but due to lack of interest and time, it was never launched.</p>
-      </article>
-    </section>
-  </main>
-</body>
+      h1 {
+        font-size: 48px;
+        font-weight: 500;
+      }
 
+      h2 {
+        font-size: 30px;
+        font-weight: 400;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 400;
+      }
+
+      p {
+        color: var(--label-secondary);
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+        font-weight: 400;
+      }
+
+      a.cf {
+        color: #f48120;
+      }
+
+      hr {
+        height: 4px;
+        background: var(--separator);
+        margin: 12px 0;
+      }
+
+      @media only screen and (min-width: 800px) {
+        main {
+          grid-template-columns: minmax(max-content, 1fr) 3fr;
+        }
+
+        section.meta {
+          padding-right: 12px;
+          text-align: right;
+          background: none;
+          position: sticky;
+          top: 0;
+          height: fit-content;
+        }
+
+        section.content {
+          padding-left: 12px;
+        }
+      }
+
+      @media only screen and (min-width: 1920px) {
+        main {
+          grid-template-columns: minmax(max-content, 1fr) 2fr 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="meta">
+        <article>
+          <header>
+            <h1>Thomas</h1>
+            <p>
+              <a
+                href="mailto:&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;"
+                >&#116;&#104;&#111;&#109;&#097;&#115;&#064;&#054;&#102;&#046;&#105;&#111;</a
+              >
+              <br />
+              <a href="https://github.com/uhthomas">github.com/uhthomas</a>
+            </p>
+          </header>
+          <br />
+          <p>
+            Systems Engineer at
+            <a class="cf" href="https://cloudflare.com/">Cloudflare</a>
+          </p>
+        </article>
+      </section>
+      <section class="content">
+        <article>
+          <header>
+            <h2>Kipp</h2>
+            <p>
+              <a href="https://kipp.6f.io">kipp.6f.io</a>
+              &nbsp;&mdash;&nbsp;
+              <a href="https://github.com/uhthomas/kipp">GitHub</a>
+            </p>
+          </header>
+          <p>A flexible file storage server.</p>
+        </article>
+        <article>
+          <header>
+            <h2>Automata</h2>
+            <a href="https://github.com/uhthomas/automata">GitHub</a>
+          </header>
+          <p>Monorepo for 6f.io and subsidiaries.</p>
+        </article>
+        <article>
+          <header>
+            <h2>Spectrum</h2>
+            <p>
+              <a href="https://6f.io/spectrum">6f.io/spectrum</a>
+              &nbsp;&mdash;&nbsp;
+              <a href="https://github.com/uhthomas/spectrum">GitHub</a>
+            </p>
+          </header>
+          <p>A real-time FFT spectrum.</p>
+        </article>
+        <article>
+          <header>
+            <h2>Screensaver</h2>
+            <p>
+              <a href="https://6f.io/screensaver">6f.io/screensaver</a>
+              &nbsp;&mdash;&nbsp;
+              <a href="https://github.com/uhthomas/screensaver">GitHub</a>
+            </p>
+          </header>
+          <p>A collection of screensavers inspired by Plug.DJ.</p>
+        </article>
+        <hr />
+        <header>
+          <h3><i>Archive</i></h3>
+        </header>
+        <article>
+          <article>
+            <header>
+              <h2>Tesla Prometheus Exporter</h2>
+              <a href="https://github.com/uhthomas/tesla_exporter">GitHub</a>
+            </header>
+            <p>Export Tesla vehicle metrics to Prometheus.</p>
+          </article>
+          <header>
+            <h2>Sana</h2>
+            <a href="https://github.com/uhthomas/sana">GitHub</a>
+          </header>
+          <p>
+            Sana was a YouTube and SoundCloud archival service which archived
+            targeted content between late 2015, and late 2016.
+          </p>
+        </article>
+        <article>
+          <header>
+            <h2>Phynix</h2>
+            <a href="https://github.com/uhthomas/phynix">GitHub</a>
+          </header>
+          <p>
+            Phynix was a Plug DJ alternative, and the successor to TurnFM after
+            a dispute between the founders. It made it to the final stages of
+            development, but due to lack of interest and time, it was never
+            launched.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
