@@ -100,8 +100,26 @@
       font-weight: 400;
     }
 
-    a.occupation {
+    .occupation>a.wiz {
       color: #0254ec;
+    }
+
+    .occupation>a.google {
+      color: #4285f4;
+      white-space: nowrap;
+    }
+
+    .occupation>a.google>span:nth-child(2),
+    .occupation>a.google>span:nth-child(6) {
+      color: #ea4335;
+    }
+
+    .occupation>a.google>span:nth-child(3) {
+      color: #fbbc05;
+    }
+
+    .occupation>a.google>span:nth-child(5) {
+      color: #34a853;
     }
 
     hr {
@@ -151,13 +169,22 @@
           </p>
         </header>
         <br />
-        <p>
-          Senior Software Engineer at
-          <a class="occupation" href="https://wiz.io/">Wiz</a>
+        <p class="occupation">
+          Software Engineer at
+          <a class="wiz" href="https://wiz.io/">Wiz</a> /
+          <a class="google" href="https://www.google.com/"
+            aria-label="Google"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></a>
         </p>
       </article>
     </section>
     <section class="content">
+      <article>
+        <header>
+          <h2>Docs</h2>
+          <a href="/docs">6f.io/docs</a>
+        </header>
+        <p>Blog and engineering documents.</p>
+      </article>
       <article>
         <header>
           <h2>Kipp</h2>
@@ -180,7 +207,7 @@
         <header>
           <h2>Screensaver</h2>
           <p>
-            <a href="https://6f.io/screensaver">6f.io/screensaver</a>
+            <a href="/screensaver">6f.io/screensaver</a>
             &nbsp;&mdash;&nbsp;
             <a href="https://github.com/uhthomas/screensaver">GitHub</a>
           </p>
@@ -191,7 +218,7 @@
         <header>
           <h2>Spectrum</h2>
           <p>
-            <a href="https://6f.io/spectrum">6f.io/spectrum</a>
+            <a href="/spectrum">6f.io/spectrum</a>
             &nbsp;&mdash;&nbsp;
             <a href="https://github.com/uhthomas/spectrum">GitHub</a>
           </p>

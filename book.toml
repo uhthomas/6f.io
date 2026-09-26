@@ -1,0 +1,21 @@
+[book]
+title = "Thomas"
+description = "Blog and engineering documents."
+authors = ["Thomas"]
+language = "en"
+src = "docs"
+
+
+[build]
+build-dir = "dist/docs"
+create-missing = false
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+site-url = "/docs/"
+no-section-label = true
+git-repository-url = "https://github.com/uhthomas/6f.io"
+
+[output.html.print]
+enable = false
